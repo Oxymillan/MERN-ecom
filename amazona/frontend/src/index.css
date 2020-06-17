@@ -134,6 +134,10 @@ a:hover{
   right: .5rem;
   top: 1.5rem;
 }
+.sidebar ul li{
+  list-style-type: none;
+  padding: .2rem;
+}
 
 /* Product Details */
 .details{
