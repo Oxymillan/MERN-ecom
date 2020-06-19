@@ -1,7 +1,7 @@
 import React from "react";
 import { Route, BrowserRouter, Link } from "react-router-dom";
-import HomeScreen from './Screens/HomeScreen';
-import ProductScreen from './Screens/ProductScreen';
+import HomeScreen from './screens/HomeScreen';
+import ProductScreen from './screens/ProductScreen';
 
 function App() {
   const openMenu = () => {
@@ -17,7 +17,7 @@ function App() {
         <header className="header">
           <div className="brand">
             <button onClick={openMenu}>&#9776;</button>
-            <Link to="/">amazona</Link> 
+            <Link to="/">amazonia</Link> 
           </div>
           <div className="header-links">
             <a href="cart.html">Cart</a>

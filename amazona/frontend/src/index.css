@@ -150,7 +150,7 @@ a:hover{
 .details-image{
   flex: 2 1 60rem;
 }
-.details-img img{
+.details-image img{
   max-width: 30rem;
   width: 100%;
 }
