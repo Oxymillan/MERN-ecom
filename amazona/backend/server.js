@@ -1,5 +1,18 @@
 import express from 'express';
-import data from './data';
+import data from './data.js';
+import dotenv from 'dotenv';
+import config from './config.js';
+import mongoose from 'mongoose';
+import userRoute from './routes/userRoute.js';
+
+dotenv.config();
+
+const mongodbUrl = config.MONGODB_URL;
+mongoose.connect(mongodbUrl, {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+  useCreateIndex: true
+}).catch(error => console.log(error.reason));
 
 const app = express();
 
@@ -17,6 +30,8 @@ app.use(function (req, res, next) {
   // Pass to next layer of middleware
   next();
 });
+
+app.use("/api/users", userRoute);
 
 app.get("/api/products/:id", (req, res) => {
   const productId = req.params.id;
