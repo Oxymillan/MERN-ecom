@@ -52,7 +52,7 @@ function App() {
         <main className="main">
           <div className="content">
             <Route path="/signin" component={SigninScreen}/>
-            <Route path="/register" component={RegisterScreen} />
+            <Route path="/signup" component={RegisterScreen} />
             <Route path="/product/:id" component={ProductScreen} />
             <Route path="/cart/:id?" component={CartScreen} />
             <Route path="/"  exact={true} component={HomeScreen} />
