@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
-import { register } from '../actions/userActions.js';
+import { register } from '../actions/userActions';
 
 function RegisterScreen(props) {
 
@@ -13,9 +13,10 @@ function RegisterScreen(props) {
   const { loading, userInfo, error } = userRegister;
   const dispatch = useDispatch();
 
+  const redirect = props.location.search ? props.location.search.split("=")[1] : '/';
   useEffect(() => {
     if (userInfo) {
-      props.history.push("/");
+      props.history.push(redirect);
     }
     return () => {
       //
@@ -25,7 +26,6 @@ function RegisterScreen(props) {
   const submitHandler = (e) => {
     e.preventDefault();
     dispatch(register(name, email, password));
-
   }
   return <div className="form">
     <form onSubmit={submitHandler} >
@@ -62,14 +62,16 @@ function RegisterScreen(props) {
           </input>
         </li>
         <li>
-          <button type="submit" className="button primary">Sign-Up</button>
+          <button type="submit" className="button primary">Register</button>
         </li>
         <li>
-          Already have an account? <Link to="/signin">Sign-in</Link>
+          Already have an account?
+          <Link to={redirect === "/" ? "signin" : "signin?redirect=" + redirect} className="button secondary text-center" >Create your amazona account</Link>
+
         </li>
 
       </ul>
     </form>
   </div>
 }
-export default RegisterScreen; 
+export default RegisterScreen;
