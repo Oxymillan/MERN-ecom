@@ -21,7 +21,7 @@ DEV mode
 Admin console, User login, User sign up, token to authenticate users, cookie throught user shopping cart, add qty of products, db query, 
 
 // To be done:
-change db to AWS, link api, update products, add paypal, add stripe, add rating system, 
+change db to AWS, add paypal, add stripe, add rating system, 
 ### Routes
 ```
 GET         /                            -> query products /api/products
