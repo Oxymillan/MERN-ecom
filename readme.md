@@ -1,13 +1,12 @@
 ## Full Stack ecom app
 > Backend: node, express, dotenv, bcryptjs, jsonwebtoken
 > Frontend: react, redux, js-cookie
-> DB: NoSQL, mongoDB
+> DB: mongoDB
 
 ### Usage
-DEV mode
 > Run Backend 
 ```
-# cd /amazona
+# cd /shop
 # npm install
 # npm start
 ```
@@ -47,6 +46,3 @@ POST        /                            -> user authentication returns payload
 PUT         /api/orders/:id/pay          -> user authentication
 GET         /api/config/paypal           -> !! not yet
 ```
-
-### Bugs to fix!!
-total price after order, max 2 decimals
